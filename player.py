@@ -95,3 +95,20 @@ class BestPlayer(Player):
                 board.unmove(idx)
 
             return (min_score, min_idx)
+
+
+class HumanPlayer(Player):
+
+    def play(self, board):
+        while True:
+            print('0-8 の数字を入力してください: ', end='')
+            idx = input()
+
+            try:
+                idx = int(idx)
+                if board.move(idx):
+                    break
+                else:
+                    print('適切な数字を入力してください')
+            except ValueError:
+                pass

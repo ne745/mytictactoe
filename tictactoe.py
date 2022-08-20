@@ -1,4 +1,4 @@
-from player import RandomPlayer, BetterPlayer, BestPlayer
+from player import RandomPlayer, BetterPlayer, BestPlayer, HumanPlayer
 
 
 MARKS = {0: 'X', 1: 'O'}
@@ -61,7 +61,7 @@ class Board:
 
 def main():
     board = Board()
-    players = [RandomPlayer(), BestPlayer(1)]
+    players = [HumanPlayer(), BestPlayer(1)]
     player = 0  # 0 or 1
 
     while True:
