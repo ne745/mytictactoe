@@ -1,4 +1,4 @@
-import numpy as np
+from player import RandomPlayer
 
 
 MARKS = {0: 'X', 1: 'O'}
@@ -52,14 +52,6 @@ class Board:
             if player is None:
                 moves.append(idx)
         return moves
-
-
-class RandomPlayer:
-    def play(self, board):
-        moves = board.valid_moves()
-        idx = np.random.choice(moves)
-        print('ランダムプレイヤー: ', idx)
-        board.move(idx)
 
 
 def main():
