@@ -1,4 +1,4 @@
-from player import RandomPlayer
+from player import RandomPlayer, BetterPlayer
 
 
 MARKS = {0: 'X', 1: 'O'}
@@ -30,6 +30,11 @@ class Board:
         self.counter += 1
         return True
 
+    def unmove(self, idx):
+        self.state[idx] = None
+        self.counter -= 1
+        return True
+
     def is_win(self, player):
         s = self.state
         return (
@@ -56,7 +61,7 @@ class Board:
 
 def main():
     board = Board()
-    players = [RandomPlayer(), RandomPlayer()]
+    players = [RandomPlayer(), BetterPlayer(1)]
     player = 0  # 0 or 1
 
     while True:
